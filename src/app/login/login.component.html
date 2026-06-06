@@ -1,0 +1,35 @@
+<div class="d-flex justify-content-center align-items-center vh-100 bg-light">
+  <div class="card shadow-sm p-4" style="width: 400px; border-radius: 10px;">
+    
+    <div class="text-center mb-4">
+      <h2 class="text-primary fw-bold"><i class="bi bi-shield-lock"></i> AdminLTE</h2>
+      <p class="text-muted">Panel de Administración</p>
+    </div>
+
+    <h5 class="text-center mb-3">Inicia sesión en tu cuenta</h5>
+    
+    <div *ngIf="mensaje" class="alert p-2 text-center" [ngClass]="esError ? 'alert-danger' : 'alert-success'">
+      {{ mensaje }}
+    </div>
+
+    <div class="mb-3 input-group">
+      <span class="input-group-text bg-light"><i class="bi bi-envelope"></i></span>
+      <input type="email" class="form-control" [(ngModel)]="correo" placeholder="Correo electrónico (admin@ipn.mx)">
+    </div>
+
+    <div class="mb-4 input-group">
+      <span class="input-group-text bg-light"><i class="bi bi-lock"></i></span>
+      <input type="password" class="form-control" [(ngModel)]="password" placeholder="Contraseña (123456)">
+    </div>
+
+    <button (click)="onSubmit()" class="btn btn-primary w-100 mb-4">
+      <i class="bi bi-box-arrow-in-right"></i> Iniciar sesión
+    </button>
+
+    <div class="d-flex flex-column gap-2 text-center">
+      <a routerLink="/recuperar" class="text-decoration-none"><i class="bi bi-key"></i> ¿Olvidaste tu contraseña?</a>
+      <a routerLink="/registro" class="text-decoration-none"><i class="bi bi-person-plus"></i> Registrar una nueva membresía</a>
+    </div>
+
+  </div>
+</div>
